@@ -46,10 +46,10 @@
                 slider: false,
                 zoom: 6
             });
-            map.on('click', function (evt) {
-                alert('current position: '+ map._mapParams.center);
-                console.log(map._mapParams.center);
-            });
+//            map.on('click', function (evt) {
+//                alert('current position: '+ map._mapParams.center);
+//                console.log(map._mapParams.center);
+//            });
             
             //console.log(map._mapParams.center);
 
@@ -64,6 +64,8 @@
                     geodesic: domAttr.get(geodesic, "checked"),
                     radius: radius
                 });
+                console.log('Center of Selection:', circle.center.x +', '+ circle.center.y);
+                //alert('center of circle: '+ e.mapPoint);
                 var graphic = new Graphic(circle, symbol);
                 gl.add(graphic);
             });
